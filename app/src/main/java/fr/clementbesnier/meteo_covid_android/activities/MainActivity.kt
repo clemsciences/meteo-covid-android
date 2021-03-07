@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import fr.clementbesnier.meteo_covid_android.R
+import fr.clementbesnier.meteo_covid_android.managers.NotificationCustomManager
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,6 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val buttonSettings = findViewById<Button>(R.id.buttonSettings)
         val webViewButton = findViewById<Button>(R.id.buttonStatistics)
+        NotificationCustomManager.createNotificationChannel(baseContext)
 
         buttonSettings.setOnClickListener {
             val i = Intent(this, SettingsActivity::class.java)
