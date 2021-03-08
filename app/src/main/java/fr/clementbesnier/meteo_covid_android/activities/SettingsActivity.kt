@@ -3,15 +3,12 @@ package fr.clementbesnier.meteo_covid_android.activities
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.AttributeSet
 import android.view.View
 import android.widget.*
-import com.google.android.material.appbar.CollapsingToolbarLayout
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import fr.clementbesnier.meteo_covid_android.R
 import fr.clementbesnier.meteo_covid_android.constants.DEPARTEMENT_ID_SETTINGS
+import fr.clementbesnier.meteo_covid_android.constants.USER_SETTINGS
 
 
 class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener {
@@ -22,9 +19,9 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_scrolling)
+        setContentView(R.layout.activity_settings)
         selectedDepartementId = -1
-        sharedPreferences = getPreferences(Context.MODE_PRIVATE)
+        sharedPreferences = getSharedPreferences(USER_SETTINGS, Context.MODE_PRIVATE)
     }
 
 
@@ -41,9 +38,10 @@ class SettingsActivity : AppCompatActivity(), AdapterView.OnItemSelectedListener
         saveButton = findViewById(R.id.saveSettingsButton)
         saveButton.setOnClickListener {
             with(sharedPreferences.edit()) {
-                println(selectedDepartementId)
-                putInt(DEPARTEMENT_ID_SETTINGS, spinner.selectedItemPosition)
+                this.putInt(DEPARTEMENT_ID_SETTINGS, spinner.selectedItemPosition)
                 this.apply()
+                println("id saved ${spinner.selectedItemPosition}")
+                Toast.makeText(this@SettingsActivity, "Paramètres sauvegardés", Toast.LENGTH_LONG).show()
             }
         }
 
