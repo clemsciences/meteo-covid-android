@@ -14,16 +14,25 @@ class MainActivity : AppCompatActivity() {
 
         val buttonSettings = findViewById<Button>(R.id.buttonSettings)
         val webViewButton = findViewById<Button>(R.id.buttonStatistics)
+        val aboutButton = findViewById<Button>(R.id.buttonAbout)
         NotificationCustomManager.createNotificationChannel(baseContext)
 
         buttonSettings.setOnClickListener {
-            val i = Intent(this, SettingsActivity::class.java)
-            startActivity(i)
+            Intent(this, SettingsActivity::class.java).apply {
+                startActivity(this)
+            }
         }
 
         webViewButton.setOnClickListener {
-            val i = Intent(this, WebViewActivity::class.java)
-            startActivity(i)
+            Intent(this, WebViewActivity::class.java).apply {
+                startActivity(this)
+            }
+        }
+
+        aboutButton.setOnClickListener {
+            Intent(this, AProposActivity::class.java).apply{
+                startActivity(this)
+            }
         }
     }
 }

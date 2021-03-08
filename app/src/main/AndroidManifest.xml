@@ -9,9 +9,11 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Meteocovidandroid"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:theme="@style/Theme.Meteocovidandroid">
+
+        <activity
+            android:name=".activities.AProposActivity"
+            android:label="@string/title_activity_a_propos" />
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_scrolling"
