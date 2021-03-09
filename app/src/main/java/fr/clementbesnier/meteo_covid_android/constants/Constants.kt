@@ -1,7 +1,7 @@
 package fr.clementbesnier.meteo_covid_android.constants
 
 // region main
-const val MAIN_URL = "www.meteo-covid.fr"
+const val MAIN_URL = "www.meteo-covid.com"
 // endregion
 
 // region settings

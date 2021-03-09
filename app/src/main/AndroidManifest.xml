@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="fr.clementbesnier.meteo_covid_android">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="false"
+        android:fullBackupContent="@xml/backup_descriptor"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -16,7 +18,7 @@
             android:label="@string/title_activity_a_propos" />
         <activity
             android:name=".activities.SettingsActivity"
-            android:label="@string/title_activity_scrolling"
+            android:label="@string/settings"
             android:theme="@style/Theme.Meteocovidandroid.NoActionBar" />
         <activity android:name=".activities.MainActivity">
             <intent-filter>
@@ -27,7 +29,18 @@
         </activity>
         <activity
             android:name=".activities.WebViewActivity"
-            android:label="@string/title_activity_web_view" />
+            android:label="@string/title_activity_web_view">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.meteo-covid.com"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
