@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.google.firebase.messaging.FirebaseMessaging
 import fr.clementbesnier.meteo_covid_android.R
 import fr.clementbesnier.meteo_covid_android.managers.NotificationCustomManager
 
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
         val buttonSettings = findViewById<Button>(R.id.buttonSettings)
         val webViewButton = findViewById<Button>(R.id.buttonStatistics)
         val aboutButton = findViewById<Button>(R.id.buttonAbout)
-        NotificationCustomManager.createNotificationChannel(baseContext)
+        NotificationCustomManager.createNotificationChannel(this)
+        FirebaseMessaging.getInstance().subscribeToTopic("report")
 
         buttonSettings.setOnClickListener {
             Intent(this, SettingsActivity::class.java).apply {
