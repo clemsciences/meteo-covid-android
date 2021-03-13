@@ -22,22 +22,16 @@
         </service>
 
         <activity
-            android:name=".activities.AProposActivity"
-            android:label="@string/title_activity_a_propos" />
-        <activity
-            android:name=".activities.SettingsActivity"
-            android:label="@string/settings"
-            android:theme="@style/Theme.Meteocovidandroid.NoActionBar" />
-        <activity android:name=".activities.MainActivity">
+            android:name=".activities.MainActivity"
+            android:launchMode="singleTop"
+            android:label="@string/mainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activities.WebViewActivity"
-            android:label="@string/title_activity_web_view">
+
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 

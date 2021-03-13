@@ -231,11 +231,16 @@
     <string name="report_channel">Canal pour les nouveaux rapports</string>
     <string name="report_channel_description">Ces notifications arrivent chaque jour et vous préviennent quand les nouvelles données sont arrivées.</string>
     <string name="settings">Paramètres</string>
-    <string name="meteo_covid_webview">Aller sur le site de MeteoCovid</string>
+    <string name="meteo_covid_webview">MétéoCovid</string>
     <string name="title_activity_a_propos">APropos</string>
     <string name="about">À propos</string>
     <string name="goToMyDepartment">Voir mon département</string>
     <string name="previous">Précédent</string>
+    <string name="view_maps">Cartes</string>
+    <string name="view_settings">Paramètres</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mainActivity">La vue principale</string>
 
 
 </resources>

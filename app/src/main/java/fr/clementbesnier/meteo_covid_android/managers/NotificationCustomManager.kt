@@ -10,7 +10,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import fr.clementbesnier.meteo_covid_android.R
-import fr.clementbesnier.meteo_covid_android.activities.WebViewActivity
+import fr.clementbesnier.meteo_covid_android.activities.MainActivity
 
 
 object NotificationCustomManager {
@@ -36,7 +36,7 @@ object NotificationCustomManager {
     }
 
     private fun createNewReportMeteoCovidNotification(context: Context, text: String? ="Appuyez ici pour consulter votre nouveau rapport personnalisé"): Notification {
-        val intent = Intent(context, WebViewActivity::class.java).apply {
+        val intent = Intent(context, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
 
