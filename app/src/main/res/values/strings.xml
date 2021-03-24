@@ -238,9 +238,11 @@
     <string name="previous">Précédent</string>
     <string name="view_maps">Cartes</string>
     <string name="view_settings">Paramètres</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mainActivity">La vue principale</string>
+    <string name="configure_department_first_use">Vous pouvez configurer directement votre département pour y avoir un accès direct.</string>
+    <string name="department">Département</string>
+    <string name="let_s_go">On y va</string>
+    <string name="later">Plus tard</string>
 
 
 </resources>

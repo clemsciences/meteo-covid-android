@@ -1,7 +1,6 @@
 package fr.clementbesnier.meteo_covid_android.fragments
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import fr.clementbesnier.meteo_covid_android.R
+import fr.clementbesnier.meteo_covid_android.constants.DEFAULT_DEPARTEMENT
 import fr.clementbesnier.meteo_covid_android.constants.DEPARTEMENT_ID_SETTINGS
 import fr.clementbesnier.meteo_covid_android.constants.USER_SETTINGS
 
@@ -77,7 +77,7 @@ class SettingsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
         activity?.let {
             it.getSharedPreferences(USER_SETTINGS, Context.MODE_PRIVATE).apply {
-            selectedDepartementId = this.getInt(DEPARTEMENT_ID_SETTINGS, 0)
+            selectedDepartementId = this.getInt(DEPARTEMENT_ID_SETTINGS, DEFAULT_DEPARTEMENT)
             resources.getStringArray(R.array.departements_id)[selectedDepartementId]
             spinner.setSelection(selectedDepartementId)
         }

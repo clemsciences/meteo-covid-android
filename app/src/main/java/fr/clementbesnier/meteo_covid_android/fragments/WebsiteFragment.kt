@@ -14,6 +14,7 @@ import android.webkit.WebViewClient
 import android.widget.Button
 import androidx.core.content.ContextCompat
 import fr.clementbesnier.meteo_covid_android.R
+import fr.clementbesnier.meteo_covid_android.constants.DEFAULT_DEPARTEMENT
 import fr.clementbesnier.meteo_covid_android.constants.DEPARTEMENT_ID_SETTINGS
 import fr.clementbesnier.meteo_covid_android.constants.MAIN_URL
 import fr.clementbesnier.meteo_covid_android.constants.USER_SETTINGS
@@ -27,8 +28,6 @@ import fr.clementbesnier.meteo_covid_android.constants.USER_SETTINGS
 class WebsiteFragment : Fragment() {
 
     lateinit var meteoCovidWebView: WebView
-
-
 
     @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(
@@ -88,7 +87,7 @@ class WebsiteFragment : Fragment() {
     private fun retrieveSelectedDepartment(): String {
         activity?.let {
             val preferences = it.getSharedPreferences(USER_SETTINGS, Context.MODE_PRIVATE)
-            val selectedDepartementId = preferences.getInt(DEPARTEMENT_ID_SETTINGS, 37) // default department is Indre-et-Loire
+            val selectedDepartementId = preferences.getInt(DEPARTEMENT_ID_SETTINGS, DEFAULT_DEPARTEMENT) // default department is Indre-et-Loire
             println("id du département $selectedDepartementId")
             return resources.getStringArray(R.array.departements_id)[selectedDepartementId]
         }
