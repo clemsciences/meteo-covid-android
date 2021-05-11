@@ -51,7 +51,7 @@ class WebsiteFragment : Fragment() {
 
         view.findViewById<Button>(R.id.buttonMyDepartment)?.setOnClickListener {
             val departementId = retrieveSelectedDepartment()
-            meteoCovidWebView.loadUrl("https://$MAIN_URL/departement-$departementId")
+            meteoCovidWebView.loadUrl("https://$MAIN_URL/dept-mob-$departementId")
         }
 
         val buttonPrevious = view.findViewById<Button>(R.id.buttonPrevious)
